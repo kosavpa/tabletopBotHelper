@@ -1,0 +1,9 @@
+services:
+  tabletop-bot:
+    container_name: tabletop-bot
+    image: tabletop-bot:1
+    build: .
+    environment:
+      - BOT_API_ID=
+      - BOT_API_HASH=
+      - BOT_TOKEN=
