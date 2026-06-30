@@ -19,10 +19,12 @@ async def run_periodic_task():
 async def periodic_loop():
     while True:
         await ask_about_game()
+
+        now = datetime.now()
         
-        seconds_until_next_minute = 60 - now.second - now.microsecond / 1_000_000
+        sleep_for = 60 - now.second - now.microsecond / 1_000_000
         
-        await asyncio.sleep(seconds_until_next_minute)
+        await asyncio.sleep(sleep_for)
 
 
 async def ask_about_game():
